@@ -1,0 +1,11 @@
+version: 0.0
+resources:
+  - mySpringApp:
+      type: AWS::EKS::Application
+      properties:
+        name: "spring-app"
+        clusterName: "spring-eks"
+        namespace: "default"
+        fileContents:
+          - "k8s/deployment.yaml"
+          - "k8s/service.yaml"
